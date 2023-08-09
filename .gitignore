@@ -50,3 +50,17 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Others
+*.swp
+*.cswp
+*.old
+*.back
+*.backup
+*.save
+test
+*.out
+test
+-test
+*main.c
+main.c
