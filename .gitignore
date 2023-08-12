@@ -62,5 +62,4 @@ test
 *.out
 test
 -test
-*main.c
-main.c
+hsh
