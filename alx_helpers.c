@@ -50,22 +50,14 @@ void _puts(char *str)
  */
 int handle_string(char *str)
 {
-	int i;
+	int i = 0, count = 0;
 
-	i = 0;
-	if (str == NULL)
+	while (str[i])
 	{
-		i = handle_string("(null)");
-		return (i);
-	}
-
-	while (*str != '\0')
-	{
-		_putchar(*str);
-		str++;
+		count += _putchar(str[i]);
 		i++;
 	}
-	return (i);
+	return (count);
 
 }
 
