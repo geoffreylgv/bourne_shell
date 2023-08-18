@@ -1,77 +1,70 @@
 #include "main.h"
 
-/**
- * main - A custom implementation of the sh (bourne shell) in C
- * @a: first argument of main
- * @env: environement
- * Return: 0 on success
- */
-int main(int a, char **env)
+int main(int ar, char **environment)
 {
+	char *prompt = "alx $ ", *path, *buffer = NULL;
+	char *argum[20], *delimiter = " \n";
+	size_t buffersize = 0;
+	ssize_t nchars;
+	pid_t childpid;
+	int i, j, state, execute;
 
-	char *lineptr = NULL, *path;
-	char *arg[9]/*number of argument*/;
-	char *delimiter = " \n";
-	size_t n = 0;
-	ssize_t nchars_read;
-	pid_t child_id;
-	int status, i = 0, j = 0, exec;
-	(void)a;
+	(void)ar;
 
 	while (1 == 1)
 	{
-		/*checks if the descriptor refers to a terminal*/
-		if (isatty(STDIN_FILENO))
-			handle_string("student@alxafricadotcom $➜  ");
+		if (isatty(0))
+			handle_string(prompt);
+		nchars = getline(&buffer, &buffersize, stdin);
 
-		nchars_read = getline(&lineptr, &n, stdin);
-
-		if (nchars_read == -1)
+		if (nchars == -1)
 		{
-			/*handle_string("Exiting shell ...\n");*/
-			free(lineptr);
-			/*exit to close the program*/
-			exit(0);
+			break;/*exitshell*/
 		}
 
-		/*interactiv mode*/
-		while (lineptr[i])
+		i = 0;
+		while (buffer[i])
 		{
-			if (lineptr[i] == '\n')
-				lineptr[i] = 0;
+			if (buffer[i] == '\n')
+			{
+				buffer[i] = 0;
+			}
 			i++;
 		}
 
-		arg[j] = strtok(lineptr, delimiter);/*extract token from a string*/
-		child_id = fork();/*create a child process*/
-
-
-		/*loop through every single token, passe whatever option argument the user will pass*/
-		while (arg[j])
+		j = 0;
+		argum[j] = strtok(buffer, delimiter);
+		while (argum[j])
 		{
-			arg[++j] = strtok(NULL, delimiter);
+			argum[++j] = strtok(NULL, delimiter);
 		}
 
-		path = get_path(arg[0]);
+		path = get_envpath(argum[0]);/*get the path*/
 
-		if (child_id < 0)
+		if (path == NULL)
 		{
-			handle_string("Failed to forking");
-			free(lineptr);
-			exit(0);
+			handle_string("Command not found\n");
+			continue;
 		}
-		else if (child_id == 0)
+
+		childpid = fork();
+		if (childpid < 0)
 		{
-			exec = execve(path, arg, env);
-			if (exec == -1)
-				handle_string("The command does not exist!\n");
+			handle_string("fork function failed for the childpid");
+			free(buffer);
+			return (-1);
+		}
+		else if (childpid == 0)
+		{
+			execute = execve(path, argum, environment);
+			if (execute == -1)
+			{
+				handle_string("command doesn't exist\n");
+			}
 		}
 		else
-			wait(&status);/*wait the process to change state*/
-
-		/*handle_string(lineptr);*/
+			wait(&state);
 	}
-	free(lineptr);
+	free(buffer);
 	return (0);
 }
-
