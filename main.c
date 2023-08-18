@@ -1,30 +1,33 @@
 #include "main.h"
 /**
  * main - A custom implementation of the sh (bourne shell) in C
+ * @argc: arguments
+ * @environment: environment variable
  *
  * Return: 0 on success
  */
-int main(void)
+int main(int argc, char **environment)
 {
 
-        char *lineptr;
+        char *lineptr, *path, *token;
         size_t n = 0;
         ssize_t nchars_read;
         char *arr[20];
-	char *token;
         int i, st;
         pid_t pid;
+
+	(void)argc;
 	
         /* arr = malloc(sizeof(char *) *1024);*/
         i = 0;
         while (1 == 1)
         {
-                handle_string("student@alxafrica.com $➜  ");
+		if (isatty(0))
+	                handle_string("student@alxafrica.com $➜  ");
                 nchars_read = getline(&lineptr, &n, stdin);
                 if (nchars_read == -1)
                 {
-                        handle_string("Exiting shell ...\n");
-                        return (-1);
+                        exit(0);
                 }
 
                 else if ( nchars_read == 1)
@@ -34,6 +37,7 @@ int main(void)
                 }
                 else
                 {
+			i = 0;
                        	token = strtok(lineptr, " \t\n");
                         while (token != NULL)
                         {
@@ -42,11 +46,18 @@ int main(void)
                                 i++;
                         }
                         arr[i] = NULL;
+
+			path = get_envpath(arr[0]);/*getpathorcmd*/
+			if (path == NULL)
+			{
+				handle_string("Command typed not found");
+				continue;
+			}
                         pid = fork();
 
                         if (pid == 0)
                         {
-                                if (execve(arr[0], arr, NULL) == -1)
+                                if (execve(path, arr, environment) == -1)
                                 {
                                         perror("Error:");
                                         return (-1);
@@ -54,10 +65,9 @@ int main(void)
                         }
                         else
                                 wait(&st);
-                       /*free(arr);*/
-                        i = 0;
                 }
         }
         free(lineptr);
         return (0);
 }
+
