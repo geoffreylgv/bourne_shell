@@ -1,70 +1,75 @@
 #include "main.h"
-
-int main(int ar, char **environment)
+/**
+ * main - A custom implementation of the sh (bourne shell) in C
+ * @argc: arguments
+ * @environment: environment variable
+ *
+ * Return: 0 on success
+ */
+int main(int argc, char **environment)
 {
-	char *prompt = "alx $ ", *path, *buffer = NULL;
-	char *argum[20], *delimiter = " \n";
-	size_t buffersize = 0;
-	ssize_t nchars;
-	pid_t childpid;
-	int i, j, state, execute;
 
-	(void)ar;
+        char *lineptr, *path, *token;
+        size_t n = 0;
+        ssize_t nchars_read;
+        char *arr[20];
+        int i, st;
+        pid_t pid;
 
-	while (1 == 1)
-	{
+	(void)argc;
+	
+        i = 0;
+        while (1 == 1)
+        {
 		if (isatty(0))
-			handle_string(prompt);
-		nchars = getline(&buffer, &buffersize, stdin);
+	                handle_string("student@alxafrica.com $➜  ");
+                nchars_read = getline(&lineptr, &n, stdin);
+                if (nchars_read == -1)
+                {
+                        exit(0);
+                }
 
-		if (nchars == -1)
-		{
-			break;/*exitshell*/
-		}
+                else if ( nchars_read == 1)
+                {
+                        handle_string(lineptr);
+                        continue;
+                }
+                else
+                {
+			i = 0;
+                       	token = strtok(lineptr, " \t\n");
+                        while (token != NULL)
+                        {
+                                arr[i] = token;
+                                token = strtok(NULL, " \t\n");
+                                i++;
+                        }
+                        arr[i] = NULL;
 
-		i = 0;
-		while (buffer[i])
-		{
-			if (buffer[i] == '\n')
+			path = get_envpath(arr[0]);/*getpathorcmd*/
+			if (path == NULL)
 			{
-				buffer[i] = 0;
+				if (handle_exit(arr) != 0)
+					continue;
+				handle_string("Command not found");
+				continue;
 			}
-			i++;
-		}
+                        pid = fork();
 
-		j = 0;
-		argum[j] = strtok(buffer, delimiter);
-		while (argum[j])
-		{
-			argum[++j] = strtok(NULL, delimiter);
-		}
-
-		path = get_envpath(argum[0]);/*get the path*/
-
-		if (path == NULL)
-		{
-			handle_string("Command not found\n");
-			continue;
-		}
-
-		childpid = fork();
-		if (childpid < 0)
-		{
-			handle_string("fork function failed for the childpid");
-			free(buffer);
-			return (-1);
-		}
-		else if (childpid == 0)
-		{
-			execute = execve(path, argum, environment);
-			if (execute == -1)
-			{
-				handle_string("command doesn't exist\n");
-			}
-		}
-		else
-			wait(&state);
-	}
-	free(buffer);
-	return (0);
+                        if (pid == 0)
+                        {
+                                if (execve(path, arr, environment) == -1)
+                                {
+                                        perror("Error:");
+                                        return (-1);
+                                }
+                        }
+                        else
+                                wait(&st);
+                }
+        }
+        free(path);
+	free(lineptr);
+        return (0);
 }
+

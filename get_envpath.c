@@ -9,9 +9,8 @@
  */
 char *have_location(char *path, char *arg)
 {
-	char *copy_path, *tokenize_path; /*buffer;*/
+	char *copy_path, *tokenize_path;
 	char *delimiter = ":", *file_path;
-	/*int *state;*/
 
 	copy_path = strdup(path);
 	tokenize_path = strtok(copy_path, delimiter);
@@ -26,16 +25,12 @@ char *have_location(char *path, char *arg)
 
 		if (access(file_path, X_OK) == 0)
 		{
-			free(copy_path);
 			return (file_path);
 		}
 		tokenize_path = strtok(NULL, delimiter);
 	}
 	free(file_path);
 	free(copy_path);
-
-	/*if (stat(arg, &buffer) == 0)
-		return (arg);*/
 
 	return (NULL);
 }
@@ -50,7 +45,6 @@ char *get_envpath(char *arg)
 {
 	char *path;
 
-	/*if (access("PATH", X_OK) == 0)*/
 	path = getenv("PATH");
 
 	if (path)
@@ -59,6 +53,6 @@ char *get_envpath(char *arg)
 		return (path);
 	}
 
-	return NULL;
+	return (NULL);
 }
 
