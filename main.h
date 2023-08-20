@@ -7,9 +7,15 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+extern char **environ;
+
 int _putchar(char c);
 void _puts(char *str);
 int _strlen(char *s);
 int handle_string(char *str);
+char *have_location(char *path, char *arg);
+char *get_envpath(char *arg);
+int handle_exit(char **arg);
+int handle_env(char **arg, char **env);
 
 #endif
