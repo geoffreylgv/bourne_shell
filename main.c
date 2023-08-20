@@ -51,7 +51,10 @@ int main(int argc, char **environment)
 			{
 				if (handle_exit(arr) != 0)
 					continue;
-				handle_string("Command not found\n");
+				else if (handle_env(arr, environment) != 0)
+					continue;
+
+				perror(" : not found ");
 				continue;
 			}
                         pid = fork();

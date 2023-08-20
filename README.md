@@ -20,10 +20,10 @@ This is a simple implementation of a Unix shell, which is a command-line interfa
 
 ### Installation
 1. Clone the repo
-`git clone https://github.com/geoffreylgv/simple_shell.git`
+`root@laptop$ git clone https://github.com/geoffreylgv/simple_shell.git`
 2. Move to the directory
-Run: `cd simple_shell`
-3. Compilation
+Run: `root@laptop$ cd simple_shell`
+3. Compilation  
 3.1. Compilation with Makefile
 Type `root@laptop$ make`  
 Run the program with `root@laptop$ make run`  

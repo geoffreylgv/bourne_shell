@@ -9,6 +9,6 @@
 int handle_exit(char **arg)
 {
 	if (strcmp(arg[0], "exit") == 0)
-		exit(0); 
+		exit(0);
 	return (0);
 }
