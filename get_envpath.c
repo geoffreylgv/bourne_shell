@@ -55,4 +55,3 @@ char *get_envpath(char *arg)
 
 	return (NULL);
 }
-
