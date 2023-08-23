@@ -5,7 +5,8 @@
  * Return: NA void
  * Descriptprompt handle_string("student@alxafrica.com $➜  ")
  */
-void _isatty(void) {
-  if (isatty(0))
-    handle_string("alxShell $ ");
+void _isatty(void)
+{
+	if (isatty(0))
+		handle_string("alxShell $ ");
 }
