@@ -10,7 +10,7 @@
 
 extern char **environ;
 
-void _isatty();
+void _isatty(void);
 int _putchar(char c);
 void _puts(char *str);
 int _strlen(char *s);

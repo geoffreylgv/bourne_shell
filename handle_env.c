@@ -2,7 +2,8 @@
 
 /**
  * handle_env - prints environment variable
- * @arg: argumen
+ * @arg: argument
+ * @env: environement
  *
  * Return: void
  */
