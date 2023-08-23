@@ -13,8 +13,6 @@ int handle_env(char **arg, char **env)
 
 	if (strcmp(arg[0], "env") == 0)
 	{
-		handle_string(env[3]);
-		handle_string("-----------");
 		for (i = 0; env[i] != NULL; i++)
 			handle_string(env[i]);
 		return (1);
