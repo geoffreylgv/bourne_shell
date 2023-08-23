@@ -1,77 +1,40 @@
 #include "main.h"
+
 /**
  * main - A custom implementation of the sh (bourne shell) in C
  * @argc: arguments
+ * @argv: array of argc
  * @environment: environment variable
  *
  * Return: 0 on success
+ * char *prompt = "(JeffreyTTY)$⚡➜ ";
  */
-int main(int argc, char **argv)
-{
-	char *lineptr, *path, *token;
-	size_t n = 0;
-	ssize_t nchars_read;
-	char *arr[20];
-	int i, st;
-	pid_t pid;
+int main(int argc, char **argv) {
+  char *lineptr, **arr, *path;
+  size_t n = 0;
+  ssize_t nchars_read;
 
-	(void)argc;
-	(void)argv;
-	
-	i = 0;
-        while (1 == 1)
-        {
-		if (isatty(0))
-	                handle_string("student@alxafrica.com $➜  ");
-                nchars_read = getline(&lineptr, &n, stdin);
-                if (nchars_read == -1)
-                {
-                        exit(0);
-                }
+  (void)argc;
+  (void)argv;
 
-                else if ( nchars_read == 1)
-                {
-                        handle_string(lineptr);
-                        continue;
-                }
-                else
-                {
-			i = 0;
-                       	token = strtok(lineptr, " \t\n");
-                        while (token != NULL)
-                        {
-                                arr[i] = token;
-                                token = strtok(NULL, " \t\n");
-                                i++;
-                        }
-                        arr[i] = NULL;
+  while (1 == 1) {
+    _isatty();
+    nchars_read = getline(&lineptr, &n, stdin);
+    if (nchars_read == -1) {
+      exit(0);
+    }
 
-			path = get_envpath(arr[0]);/*getpathorcmd*/
-			if (path == NULL)
-			{
-				if (handle_exit(arr) != 0)
-					continue;
-				else if (handle_env(arr, environ) != 0)
-					continue;
+    else if (nchars_read == 1) {
+      handle_string(lineptr);
+      continue;
+    } else {
+      arr = get_token(lineptr);
 
-				perror(" : not found ");
-				continue;
-			}
-                        pid = fork();
-
-                        if (pid == 0)
-                        {
-                                if (execve(path, arr, environ) == -1)
-                                {
-                                        perror("Error:");
-                                        return (-1);
-                                }
-                        }
-                        else
-                                wait(&st);
-                }
-        }
-        free(path);
-	free(lineptr);
-        return (0);
+      path = run_command(arr);
+    }
+    free(arr);
+  }
+  free(path);
+  free(lineptr);
+  return (0);
 }
