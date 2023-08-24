@@ -22,5 +22,5 @@ int handle_env(char **arg, char **env);
 ssize_t _getline(char *lineptr);
 char **get_token(char *lineptr);
 char *run_command(char **array);
-
+int check_cmd(char *cmd);
 #endif

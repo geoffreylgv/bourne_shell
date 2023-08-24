@@ -12,7 +12,10 @@ char *run_command(char **array)
 	pid_t pid;
 	char *path;
 
-	path = get_envpath(array[0]);
+	if (check_cmd(array[0]) == 0)
+		path = get_envpath(array[0]);
+	else
+		path = array[0];
 	if (path == NULL)
 	{
 		if (handle_exit(array) != 0)
