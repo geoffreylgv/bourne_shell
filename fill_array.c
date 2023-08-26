@@ -5,14 +5,14 @@
  * @v: ptr
  * @j: number
  * @l: lenght of j
- *Return: ptr
+ * Return: ptr
  */
 void *enlarge_arr(void *v, int j, unsigned int l)
 {
 	char *c = v;
 	unsigned int i = 0;
 
-	while (j < l)
+	while (i < l)
 	{
 		*c = j;
 		c++;
