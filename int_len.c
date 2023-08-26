@@ -5,14 +5,14 @@
  * @num: Given Int
  * Return: Length Of Int
  */
-int intlen(int num)
+int len_int(int n)
 {
-	int len = 0;
+	int l = 0;
 
-	while (num != 0)
+	while (n != 0)
 	{
-		len++;
-		num /= 10;
+		l++;
+		n /= 10;
 	}
-	return (len);
+	return (l);
 }

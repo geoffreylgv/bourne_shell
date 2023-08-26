@@ -7,30 +7,30 @@
  *@new_size: New Size Of The Pointer
  *Return: Void Pointer Rellocated Memory
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *pointer, unsigned int o_s, unsigned int n_s)
 {
-	void *result;
+	void *out;
 
-	if (new_size == old_size)
-		return (ptr);
-	if (new_size == 0 && ptr)
+	if (n_s == o_s)
+		return (pointer);
+	if (n_s == 0 && pointer)
 	{
-		free(ptr);
+		free(pointer);
 		return (NULL);
 	}
-	result = malloc(new_size);
-	if (result == NULL)
+	out = malloc(n_s);
+	if (out == NULL)
 		return (NULL);
-	if (ptr == NULL)
+	if (pointer == NULL)
 	{
-		fill_an_array(result, '\0', new_size);
-		free(ptr);
+		enlarge_arr(out, '\0', n_s);
+		free(pointer);
 	}
 	else
 	{
-		_memcpy(result, ptr, old_size);
-		free(ptr);
+		_memcpy(out, pointer, o_s);
+		free(pointer);
 	}
-	return (result);
+	return (out);
 
 }

@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- *  _prerror - Print Custome Error
- * @argv:Program Name
- * @c:Error Count
- * @cmd:Command
- * Return: Void
+ *  _prerror - error handling 
+ * @array: array
+ * @ch: number of errors
+ * @command: Command
+ * Return: nothing
  */
 void _prerror(char **array, int ch, char **command)
 {
@@ -22,11 +22,11 @@ void _prerror(char **array, int ch, char **command)
 	free(err);
 }
 /**
- * print_error - Display Error Based on Command and How Many Time Shell Looped
- * @input:User Input
- * @counter:Simple Shell Count Loop
- * @argv:Program Name
- * Return: Void
+ * show error - shows the errors
+ * @line_input: line input 
+ * @count: count 
+ * @array: array
+ * Return: nothing
  */
 void show_err(char *line_input, int count, char **array)
 {

@@ -63,7 +63,7 @@ char *_itoa(unsigned int n)
 	int len = 0, i = 0;
 	char *s;
 
-	len = intlen(n);
+	len = len_int(n);
 	s = malloc(len + 1);
 	if (!s)
 		return (NULL);
@@ -75,7 +75,7 @@ char *_itoa(unsigned int n)
 		i++;
 	}
 	s[i] = (n % 10) + '0';
-	array_rev(s, len);
+	rev_arr(s, len);
 	s[i + 1] = '\0';
 	return (s);
 }

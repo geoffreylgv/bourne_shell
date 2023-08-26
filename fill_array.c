@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * fill_an_array - Fill An Array By Constant Byte
- * @a:Void Pointer
- * @el: Int
- * @len:Length Int
- *Return: Void Pointer
+ * enlarge_arr - fills the array
+ * @v: ptr
+ * @j: number
+ * @l: lenght of j
+ *Return: ptr
  */
-void *fill_an_array(void *a, int el, unsigned int len)
+void *enlarge_arr(void *v, int j, unsigned int l)
 {
-	char *p = a;
+	char *c = v;
 	unsigned int i = 0;
 
-	while (i < len)
+	while (j < l)
 	{
-		*p = el;
-		p++;
+		*c = j;
+		c++;
 		i++;
 	}
-	return (a);
+	return (v);
 }

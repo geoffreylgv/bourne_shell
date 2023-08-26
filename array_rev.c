@@ -5,15 +5,15 @@
  * @len:Length Of Array
  * Return: Void(Reverse Array)
  */
-void array_rev(char *arr, int len)
+void rev_arr(char *array, int l)
 {
-	int i;
-	char tmp;
+	int j;
+	char t;
 
-	for (i = 0; i < (len / 2); i++)
+	for (j = 0; j < (l / 2); j++)
 	{
-		tmp = arr[i];
-		arr[i] = arr[(len - 1) - i];
-		arr[(len - 1) - i] = tmp;
+		t = array[j];
+		array[j] = array[(l - 1) - j];
+		array[(l - 1) - j] = t;
 	}
 }

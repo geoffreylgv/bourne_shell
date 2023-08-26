@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * handle_builtin - Handle Builtin Command
- * @cmd: Parsed Command
+ * handle_bul - handles the commands
+ * @command: command
  * @er:statue of last Excute
  * Return: -1 Fail 0 Succes (Return :Excute Builtin)
  */
