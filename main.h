@@ -80,4 +80,4 @@ typedef struct  manips
         char *cmd;
         int (*exec)(char **cmd, int err);
 } manip_t;
-#endifec: execute cmd
+#endif
