@@ -5,9 +5,9 @@
  * @name: Environment Variable Name
  * Return: The Value of the Environment Variable Else NULL.
  */
-char *return_envi(char *path_name)
+char *_return_envi(char *path_name)
 {
-	int x, y, i
+	int x, y, i;
 	size_t len1, len2;
 	char *val;
 

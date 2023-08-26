@@ -12,7 +12,7 @@ void handle_file(char *cmd, int count, FILE *fl, char **array)
 	char **command;
 	int st = 0;
 
-	cmd = write_command(cmd);
+	command = write_command(cmd);
 
 		if (_strcmpn(command[0], "exit", 4) == 0)
 		{

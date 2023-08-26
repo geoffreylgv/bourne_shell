@@ -8,26 +8,26 @@
 int use_echo(char **command)
 {
 	int st;
-	pid_t pid;
+	pid_t p;
 
-	pid = fork();
-	if (pid == 0)
+	p = fork();
+	if (p == 0)
 	{
-	if (execve("/bin/echo", cmd, environ) == -1)
+	if (execve("/bin/echo", command, environ) == -1)
 	{
 		return (-1);
 	}
 		exit(EXIT_FAILURE);
 	}
-	else if (pid < 0)
+	else if (p < 0)
 	{
 		return (-1);
 	}
 	else
 	{
 		do {
-			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+			waitpid(p, &st, WUNTRACED);
+		} while (!WIFEXITED(st) && !WIFSIGNALED(st));
 	}
 	return (1);
 }

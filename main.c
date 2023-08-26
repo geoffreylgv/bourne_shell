@@ -9,7 +9,7 @@
 
 int main(__attribute__((unused)) int argc, char **array)
 {
-	char *full_command, **command;
+	char *line_input, **command;
 	
 	int status, count, st;
 	
@@ -23,7 +23,7 @@ int main(__attribute__((unused)) int argc, char **array)
 	{
 		count++;
 		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, c, _strlen(c));
+			write(STDOUT_FILENO, "$ ", _strlen("$ "));
 		line_input = _readline();
 		if (line_input[0] == '\0')
 		{
@@ -46,7 +46,7 @@ int main(__attribute__((unused)) int argc, char **array)
 		}
 		else
 		{
-			st = verify_command(commandd, line_input, count, array);
+			st = verify_command(command, line_input, count, array);
 
 		}
 		free(command);

@@ -59,14 +59,14 @@ int write_man(char **command, int st)
 	}
 	else if (_strcmpn(command[1], "$PATH", 5) == 0)
 	{
-		chemin = return_envi("PATH");
+		chemin = _return_envi("PATH");
 		write(STDOUT_FILENO, chemin, _strlen(chemin));
 		write(STDOUT_FILENO, "\n", _strlen("\n"));
 		free(chemin);
 
 	}
 	else
-		return (print_echo(command));
+		return (use_echo(command));
 
 	return (1);
 }

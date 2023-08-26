@@ -11,7 +11,7 @@ char **write_command(char *line_input)
 	char *tk;
 	int i, buffsize;
        
-	buffsize = BUFFSIZE;
+	buffsize = BUFSIZE;
 
 	if (line_input == NULL)
 		return (NULL);

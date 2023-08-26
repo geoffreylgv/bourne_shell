@@ -13,7 +13,7 @@ void rd_fl(char *flname, char **array)
 	size_t len = 0;
 	int count = 0;
 
-	fl = fopen(filename, "r");
+	fl = fopen(flname, "r");
 	if (fl == NULL)
 	{
 		exit(EXIT_FAILURE);
