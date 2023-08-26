@@ -69,11 +69,15 @@ int write_man(char **command, int err);
 void  exit_builtin(char **command, char *line_input, char **array, int ch);
 int use_echo(char **command);
 
-/**    structure of the commands */
+/**
+ * struct manips - defines cmd
+ * @cmd: command
+ * @ex
+ */
 
 typedef struct  manips
 {
         char *cmd;
         int (*exec)(char **cmd, int err);
 } manip_t;
-#endif
+#endifec: execute cmd
