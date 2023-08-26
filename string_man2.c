@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * put_int - print an int
- * @n:Integer
- * Return: void
+ * put_int - give an int
+ * @num: number
+ * Return: nothing
  */
 void put_int(int num)
 {
@@ -21,9 +21,9 @@ void put_int(int num)
         _putchar(i % 10 + '0');
 }
 /**
- * print_number -Print Unsigned Int Putchar
- * @n: Unisigned Integer
- * Return: Void
+ * put_unint - gives number
+ * @num: unsigned int
+ * Return: nothing
  */
 void put_unint(unsigned int num)
 {
@@ -37,9 +37,9 @@ void put_unint(unsigned int num)
 }
 
 /**
- * _strlen - lenght of string
- * @s:char
- * Return:int
+ * _strlen - copy of the strlen
+ * @s: string
+ * Return: lenght
  */
 
 int _strlen(char *s)
@@ -53,10 +53,10 @@ int _strlen(char *s)
 	return (j);
 }
 /**
- * _strcat - Concat Two String
- * @dest:First String
- * @src:Second String
- * Return:First String + Second String Char *
+ * _strcat - copy of the strcat
+ * @destination: dest
+ * @source: src
+ * Return: str
  */
 char *_strcat(char *destination, char *source)
 {

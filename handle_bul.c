@@ -3,8 +3,8 @@
 /**
  * handle_bul - handles the commands
  * @command: command
- * @er:statue of last Excute
- * Return: -1 Fail 0 Succes (Return :Excute Builtin)
+ * @er: error
+ * Return: 0 , -1
  */
 
 int handle_bul(char **command, int err)
@@ -33,10 +33,10 @@ int handle_bul(char **command, int err)
 }
 
 /**
- * dis_env - Display Enviroment Variable
- * @cmd:Parsed Command
- * @er:Statue of Last command Excuted
- * Return:Always 0
+ * show_envi - shows the env variable
+ * @command: command
+ * @err: status
+ * Return: 0
  */
 int show_envi(__attribute__((unused)) char **command, __attribute__((unused)) int err)
 {

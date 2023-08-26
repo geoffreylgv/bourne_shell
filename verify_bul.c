@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *
- *
- *
+ * verify_bul - verifies the builtins
+ * @command: command
+ * Return: 0 , -1
  *
  */
 

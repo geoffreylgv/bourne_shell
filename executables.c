@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * change_dir - Change Dirctorie
- * @cmd: Parsed Command
- * @er: Statue Last Command Excuted
- * Return: 0 Succes 1 Failed (For Old Pwd Always 0 Case No Old PWD)
+ * switch_directory - switches dirc
+ * @command: cmd
+ * @er: execution statue
+ * Return: 0 , 1
  */
 int switch_directory(char **command, __attribute__((unused))int err)
 {
@@ -34,10 +34,10 @@ int switch_directory(char **command, __attribute__((unused))int err)
 	return (0);
 }
 /**
- * echo_bul - Excute Echo Cases
- * @st:Statue Of Last Command Excuted
- * @cmd: Parsed Command
- * Return: Always 0 Or Excute Normal Echo
+ * write_man - writes path
+ * @st: status
+ * @command: command
+ * Return: exec or 0
  */
 int write_man(char **command, int st)
 {
@@ -71,10 +71,10 @@ int write_man(char **command, int st)
 	return (1);
 }
 /**
- * display_help - Displaying Help For Builtin
- * @cmd:Parsed Command
- * @er: Statue Of Last Command Excuted
- * Return: 0 Succes -1 Fail
+ * show_help - show help
+ * @command: command
+ * @err: execution
+ * Return: 0 , -1
  */
 int show_help(char **command, __attribute__((unused))int err)
 {

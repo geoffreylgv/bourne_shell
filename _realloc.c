@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- **_realloc -  Reallocates A Memory Block Using Malloc And Free
- *@ptr: Pointer
- *@old_size: Previous Size Of The Pointer
- *@new_size: New Size Of The Pointer
- *Return: Void Pointer Rellocated Memory
+ * _realloc - realloc
+ *@pointer: Pointer
+ *@o_s: o string
+ *@n_s: n string
+ *Return: out
  */
 void *_realloc(void *pointer, unsigned int o_s, unsigned int n_s)
 {

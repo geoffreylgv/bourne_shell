@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strcmp - Compare Two String
- * @s1:String 1
- * @s2:String 2
- * Return: 0 If Identical Otherwise How Much Diffrent
+ * _strcmp - strmp
+ * @s1: first str
+ * @s2: second str
+ * Return: cmp
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -31,9 +31,9 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * _isalpha - Check if Alphabtic
- *@c: Character
- * Return: 1 If True 0 If Not
+ * _alphabet - verify alphatbet
+ *@ch: number
+ * Return: 1, 0
  */
 int _alphabet(int ch)
 {
@@ -48,9 +48,9 @@ else
 }
 
 /**
- * _atoi - convert to a int
- * @s:string
- * Return:int
+ * _atoi -  str to number
+ * @string: str
+ * Return: integer
  */
 int _atoi(char *string)
 {
