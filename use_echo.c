@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_echo - Excute Normal Echo
- * @cmd: Parsed Command
+ * use_ech - the /bin/echo command original use
+ * @command: command passed to pipe
  * Return: 0 Succes -1 Fail
  */
 int use_echo(char **command)

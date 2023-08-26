@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * intlen - Determine Length Of Int
- * @num: Given Int
- * Return: Length Of Int
+ * len_int - gets the length of an int
+ * @n: int to get the length
+ * Return: integer lenght of int
  */
 int len_int(int n)
 {

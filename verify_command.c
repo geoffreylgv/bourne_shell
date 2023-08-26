@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * check_cmd - Excute Simple Shell Command (Fork,Wait,Excute)
+ * verify_command - verify.s command like execute wait or fork
  *
- * @cmd:Parsed Command
- * @input: User Input
- * @c:Shell Excution Time Case of Command Not Found
- * @argv:Program Name
- * Return: 1 Case Command Null -1 Wrong Command 0 Command Excuted
+ * @command: the command sent
+ * @lineptr: the line user entered(getine)
+ * @ch: number time command not found
+ * @array: array par
+ * Return: 1 command Null, -1 Wrong Command 0 Command Excuted
  */
 int verify_command(char **command, char *line_input, int ch, char **array)
 {

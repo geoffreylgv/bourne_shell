@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * exit_fl_bul - exit the shell file
- * @cmd: command line 
- * @command: command
- * @fl: file desc
+ * exit_fl_bul - functions exits the shell
+ * @cmd: the argument comd
+ * @command: the command itself
+ * @fl: file descriptor
  * Return : status
  */
 void exit_fl_bul(char **command, char *cmd, FILE *fl)

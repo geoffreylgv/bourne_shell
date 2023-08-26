@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * hashtag_handle - remove everything after #
- * @buff: input;
- * Return:void
+ * _comment- function that remove things just after comment sign the hashtag (#)
+ * @bf: the buffer input gotten
+ * Return: NA void
  */
 void _comment(char *bf)
 {
@@ -20,8 +20,9 @@ void _comment(char *bf)
         }
 }
 /**
-* _getline - Read The Input By User From Stdin
-* Return: Input
+* _readline - Function like the originaly
+* getline useing to get the user entry
+* Return: the data or cmd unser entered
 */
 char *_readline()
 {

@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * check_delim - Checks If A Character Match Any Char *
- * @c: Character To Check
- * @str: String To Check
- * Return: 1 Succes, 0 Failed
+ * verify_delim - verify.s the delimiter matches the char specified
+ * @ch: whom is going to be checked
+ * @string: the delimiter string
+ * Return: 1 Succes, 0 Fail
  */
 unsigned int verify_delim(char ch, const char *string)
 {

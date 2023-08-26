@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * path_cmd -  Search In $PATH For Excutable Command
- * @cmd: Parsed Input
- * Return: 1  Failure  0  Success.
+ * command_chemin - basicaly gets path of the command (/bin/....)
+ * @command: command gotten by user input
+ * Return: 1  Failure  0  on success
  */
 int command_chemin(char **command)
 {

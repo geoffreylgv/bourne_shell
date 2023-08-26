@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * build - Build Command
- * @token: Excutable Command
- * @value: Dirctory Conatining Command
+ * build - Command builder
+ * @tk: token parameter
+ * @val: the value parameter
  *
- * Return: Parsed Full Path Of Command Or NULL Case Failed
+ * Return: Path relative of a command, null otherwise
  */
 char *construct(char *tk, char *val)
 {

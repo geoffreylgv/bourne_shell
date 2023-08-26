@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- *  array_rev - Reverse Array
- * @arr:Array To Reverse
- * @len:Length Of Array
- * Return: Void(Reverse Array)
+ * rev_arr - Have array and revere it
+ * @array: array gien to reverse
+ * @l: array length
+ * Return: NA Void
  */
 void rev_arr(char *array, int l)
 {

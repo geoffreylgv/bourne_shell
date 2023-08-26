@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * _strtok - Token A String Into Token (strtrok)
- * @str: String
- * @delim: Delimiter
- * Return: Pointer To The Next Token Or NULL
+ * _strtok - Splits or tokenizes like the same and originary one
+ * strtok
+ * @str: String to tokenize
+ * @delim: a delimiter to use to tokenize
+ * Return: char as pointer
  */
 char *_strtok(char *string, const char *delimiter)
 {

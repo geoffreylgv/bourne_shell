@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * exit_bul - Exit Statue Shell
- * @cmd: Parsed Command
- * @input: User Input
- * @argv:Program Name
- * @c:Excute Count
- * Return: Void (Exit Statue)
+ * exit_builtin -builtin function exit method Exit Statue Shell
+ * @command: the command
+ * @line_input: input of the user
+ * @array: got the name of simpleshell
+ * @ch: Number count execution
+ * Return: NA
  */
 void  exit_builtin(char **command, char *line_input, char **array, int ch)
 {
