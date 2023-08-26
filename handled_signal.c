@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * signal_to_handel - Handle ^C
- * @sig:Captured Signal
- * Return: Void
+ * handled_signal - handling sig
+ * @target_signal: sig
+ * Return: nothing
  */
 void handled_signal(int target_signal)
 {

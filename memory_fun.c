@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * free_env - Free Enviroment Variable Array
- * @env:  Environment variables.
- * Return: Void
+ * clean_env - clean env
+ * @environement:  env variable
+ * Return: nothing
  */
 void clean_env(char **environement)
 {
@@ -16,19 +16,19 @@ void clean_env(char **environement)
 }
 
 /**
- * _memcpy - Copy Byte From Source To Destination
- * @dest: Destination Pointer
- * @src: Source Pointer
- * @n: Size (How Much You Will Copy)
- *Return: Void Pointer
+ * _memcpy - memcpy
+ * @destination:  dest ptr
+ * @source: src ptr
+ * @n: number size 
+ * Return: Void Pointer
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_memcpy(char *destination, char *source, unsigned int n)
 {
 	unsigned int i;
 
 	for (i = 0; i < n; i++)
 	{
-		dest[i] = src[i];
+		destination[i] = source[i];
 	}
-	return (dest);
+	return (destination);
 }

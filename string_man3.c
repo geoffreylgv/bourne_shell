@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * _strcmpn - Compare a number of char in two strings
- * @s1: string 1
- * @s2: string 2
- * @n: number of char
+ * _strcmpn - justt like strcmp
+ * @s1: s 1
+ * @s2: s 2
+ * @n: number to take
  *
- * Return: 1 matched , 0 unmatched
+ * Return: 1, 0
  */
 int _strcmpn(const char *s1, const char *s2, size_t n)
 {
@@ -23,9 +23,9 @@ int _strcmpn(const char *s1, const char *s2, size_t n)
         return (0);
 }
 /**
- * _strdup - Duplicate A String
- * @str:String
- * Return: Duplicate String Failed Null
+ * _strdup - just like strdup
+ * @str: str
+ * Return: just like strdup
  */
 char *_strdup(char *str)
 {
@@ -58,6 +58,11 @@ int _putchar(char c)
         return (write(1, &c, 1));
 }
 
+/**
+ * _itoa - just like itoa
+ * @n: number
+ * Return: string
+ */
 char *_itoa(unsigned int n)
 {
 	int len = 0, i = 0;

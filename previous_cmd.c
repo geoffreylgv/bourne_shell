@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * history - Fill File By User Input
- * @input: User Input
- * Return: -1 Fail 0 Succes
+ * previous - get the history
+ * @line_input: line
+ * Return: 0 , -1
  */
 int previous(char *line_input)
 {
@@ -30,10 +30,10 @@ int previous(char *line_input)
 }
 
 /**
- * history_dis - Display History Of User Input Simple Shell
- * @c:Parsed Command
- * @s:Statue Of Last Excute
- * Return: 0 Succes -1 Fail
+ * show_hist - shows hist
+ * @parsed_command: cmd
+ * @statue: statue
+ * Return: 0, -1
  */
 int show_hist(__attribute__((unused))char ** parsed_command, __attribute__((unused))int statue)
 {

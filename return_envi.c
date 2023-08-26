@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * return_envi - Gets The Value Of Enviroment Variable By Name
- * @name: Environment Variable Name
- * Return: The Value of the Environment Variable Else NULL.
+ * _return_envi - return env
+ * @path_name: path
+ * Return: val
  */
 char *_return_envi(char *path_name)
 {

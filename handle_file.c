@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * treat_file - PARSE Check Command Fork Wait Excute in Line of File
- * @line: Line From A File
- * @counter:Error Counter
- * @fp:File Descriptor
- * @argv:Program Name
- * Return : Excute A line void
+ * handle_file - parsing file
+ * @cmd: command 
+ * @count: count
+ * @fl: file 
+ * @array:array
+ * Return: nothing
  */
 void handle_file(char *cmd, int count, FILE *fl, char **array)
 {
