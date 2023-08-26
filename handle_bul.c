@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * handle_builtin - Handle Builtin Command
@@ -30,4 +30,26 @@ int handle_bul(char **command, int err)
 		i++;
 	}
 	return (-1);
+}
+
+/**
+ * dis_env - Display Enviroment Variable
+ * @cmd:Parsed Command
+ * @er:Statue of Last command Excuted
+ * Return:Always 0
+ */
+int show_envi(__attribute__((unused)) char **command, __attribute__((unused)) int err)
+{
+	size_t j;
+	int lenght;
+
+	j = 0;
+	while (environ[j] != NULL)
+	{
+		lenght = _strlen(environ[j]);
+		write(1, environ[j], lenght);
+		write(STDOUT_FILENO, "\n", 1);
+		j++;
+	}
+	return (0);
 }

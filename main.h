@@ -63,10 +63,10 @@ char *_getline(void);
 void hashtag_handle(char *buff);
 int history(char *input);
 int history_dis(char **cmd, int er);
-int dis_env(char **cmd, int er);
-int change_dir(char **cmd, int er);
+int show_envi(char **command, int err);
+int switch_directory(char **command, int err);
 int display_help(char **cmd, int er);
-int echo_bul(char **cmd, int er);
+int write_man(char **command, int err);
 void  exit_builtin(char **command, char *line_input, char **array, int ch);
 int print_echo(char **cmd);
 

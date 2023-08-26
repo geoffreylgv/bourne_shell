@@ -76,7 +76,7 @@ else
  */
 int _atoi(char *str)
 {
-int x, y, num, i;
+	int x, y, num, i;
 
 	x = 0;
 	num = 0;
@@ -94,4 +94,40 @@ int x, y, num, i;
 		y++;
 	}
 	return (num);
+}
+
+/**
+ * put_int - print an int
+ * @n:Integer
+ * Return: void
+ */
+void put_int(int num)
+{
+	unsigned int i 
+		
+	i = num;
+	if (num < 0)
+	{
+		_putchar('-');
+		i = -i;
+	}
+	if ((i / 10) > 0)
+		put_unint(i / 10);
+
+	_putchar(i % 10 + '0');
+}
+/**
+ * print_number -Print Unsigned Int Putchar
+ * @n: Unisigned Integer
+ * Return: Void
+ */
+void put_unint(unsigned int num)
+{
+	unsigned int j;
+
+	j = num;
+	if ((j / 10) > 0)
+		put_unint(j / 10);
+
+	_putchar(j % 10 + '0');
 }
